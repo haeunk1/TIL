@@ -36,7 +36,7 @@ JVM이 운영체제 위에서 실행되면서 할당받은 메모리 영역<br>
 3. **Stack영역**은 지역변수나 메서드의 매개변수, 임시적으로 사용되는 변수, 메서드의 정보가 저장되는 영역<br>
 <img width="357" alt="image" src="https://user-images.githubusercontent.com/53562331/177929634-f2a01ed6-c820-4fc4-9736-a7c66ac5dcb1.png"><br>
 - primitive Type이 아닌 Reference Type(class, interface, enum, Array)은 Heap영역에 메모리를 저장하고, 메모리 주소를 참조하는 변수를 Stack영역에 저장<br>
-4. **PC Register영역** pc(program counter)<br>
+4. **PC Register영역** = PC(Program Counter)<br>
 - 스레드가 생성될 때 생성되며, 현재 수행중인 JVM의 명령어 주소를 저장하는 공간. 즉, 스레드가 어떤 부분을 어떤 명령어로 수해할지를 저장하는 공간.<br>
 5. **Navive Method Stack영역**은 JAVA가 아닌 다른 언어로 작성된 코드를 위한 공간. C/C++등의 코드가 기계어로 작성된 프로그램을 실행<br>
 
