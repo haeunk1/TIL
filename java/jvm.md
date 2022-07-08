@@ -22,15 +22,17 @@
 
 Runtime Data Area
 ---
+JVM이 운영체제 위에서 실행되면서 할당받은 메모리 영역<br>
 <img width="575" alt="image" src="https://user-images.githubusercontent.com/53562331/177928982-fff0b24b-9dd1-4868-a340-7414890aeb30.png">
 
 1. **Method영역**은 JVM이 시작될 때 생성되는 공간으로 바이트코드가 이 영역에 저장됨<br>
 - 클래스 정보, 변수 정보, static으로 선언한 변수가 저장되고 모든 스레드가 공유하는 영역<br>
 2. **Heap영역**은 동적으로 생성된 객체가 저장되는 영역으로 GC의 대상이 되는 공간<br>
-- 배열객체나 new연산자를 통해 생성된 객체가 소멸되기 전이나 가비지 컬랙터가 정리하기 전 이 영역에 남아있음
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/53562331/177928518-d466eb1a-71c0-46dd-a47a-27b93cf998cb.png"><br>
-- 가비지컬랙션의 대상이 되는 공간<br>
-- 효율적인 GC를 위해 5가지 영역으로 나뉨<br>
+- 배열객체나 new연산자를 통해 생성된 객체가 소멸되기 전이나 가비지 컬렉터가 정리하기 전 이 영역에 남아있음<br>
+- 가비지컬렉션의 대상이 되는 공간<br>
+>**가비지 컬렉션** - 자바에서는 JVM이 프로그램 메모리를 관리, JVM은 가비지컬렉션이라는 프로세스를 통해 메모리를 관리, 자바에서 사용되지 않은 메모리를 지속적으로 찾아내서 제거하는 역할을 함.<br>
+>실행순서: 참조되지 않은 객체들을 탐색 후 삭제 → 삭제된 객체의 메모리를 반환  → 힙 메모리 재사용<br>
+>효율적인 GC를 위해 5가지 영역으로 나뉨<br>
 3. **Stack영역**은 지역변수나 메서드의 매개변수, 임시적으로 사용되는 변수, 메서드의 정보가 저장되는 영역<br>
 <img width="357" alt="image" src="https://user-images.githubusercontent.com/53562331/177929634-f2a01ed6-c820-4fc4-9736-a7c66ac5dcb1.png"><br>
 - primitive Type이 아닌 Reference Type(class, interface, enum, Array)은 Heap영역에 메모리를 저장하고, 메모리 주소를 참조하는 변수를 Stack영역에 저장<br>
