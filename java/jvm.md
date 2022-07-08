@@ -40,6 +40,16 @@ Runtime Data Area
 
 Execution Engine
 ---
-Runtime Data Area에 로딩된 clss파일이 Execution Engine에 의해 해석
+Runtime Data Area에 로딩된 class파일이 Execution Engine에 의해 해석
 <img width="642" alt="image" src="https://user-images.githubusercontent.com/53562331/177931355-34d665c9-bee4-428b-b1ab-3979d0f81ff1.png">
+- interpreter는 명령어를 한줄한줄 실행
+- JIT Compiler는 interpreter의 단점을 해결, 런타임시간에 한꺼번에 변경하여 실행
+- 해석된 후 Runtime Data Area에 배치되어 수행(스레드동기화, 가비지 컬랙션)
+
+<hr>
+<img width="509" alt="image" src="https://user-images.githubusercontent.com/53562331/177932214-74ec8472-3e63-4a15-8990-0461bf824fd1.png">
+Native Method Interface(JNI)<br>
+- JVM에 의해 실행되는 코드 중 네이티브로 실행되는 것이 있다면 해당 네이티브 코드를 호출하거나 호출 될 수 있도록 만든 일종의 프레임워크<br>
+Native Method Library<br>
+- 네이티브메소드 실행에 필요한 라이브러리
 
