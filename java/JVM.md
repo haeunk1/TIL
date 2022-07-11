@@ -30,9 +30,8 @@ JVM이 운영체제 위에서 실행되면서 할당받은 메모리 영역<br>
 2. **Heap영역**은 동적으로 생성된 객체가 저장되는 영역으로 GC의 대상이 되는 공간<br>
 - 배열객체나 new연산자를 통해 생성된 객체가 소멸되기 전이나 가비지 컬렉터가 정리하기 전 이 영역에 남아있음<br>
 - 가비지컬렉션의 대상이 되는 공간<br>
->**가비지 컬렉션** - 자바에서는 JVM이 프로그램 메모리를 관리, JVM은 가비지컬렉션이라는 프로세스를 통해 메모리를 관리, 자바에서 사용되지 않은 메모리를 지속적으로 찾아내서 제거하는 역할을 함.<br>
->실행순서: 참조되지 않은 객체들을 탐색 후 삭제 → 삭제된 객체의 메모리를 반환  → 힙 메모리 재사용<br>
->효율적인 GC를 위해 5가지 영역으로 나뉨<br>
+><a href="https://github.com/haeunk1/TIL/blob/main/java/Garbage%20Collection(GC).md">**가비지 컬렉션**</a><br> - 자바에서는 JVM이 프로그램 메모리를 관리, JVM은 가비지컬렉션이라는 프로세스를 통해 메모리를 관리, 자바에서 사용되지 않은 메모리를 지속적으로 찾아내서 제거하는 역할을 함.<br>
+
 3. **Stack영역**은 지역변수나 메서드의 매개변수, 임시적으로 사용되는 변수, 메서드의 정보가 저장되는 영역<br>
 <img width="357" alt="image" src="https://user-images.githubusercontent.com/53562331/177929634-f2a01ed6-c820-4fc4-9736-a7c66ac5dcb1.png"><br>
 - primitive Type이 아닌 Reference Type(class, interface, enum, Array)은 Heap영역에 메모리를 저장하고, 메모리 주소를 참조하는 변수를 Stack영역에 저장<br>
