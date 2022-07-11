@@ -30,5 +30,24 @@ reference count가 0이됨. 0이 된다면 가비지 컬렉션의 대상이 됨<
 단점 : 의도적으로 GC를 실행시켜야 함, 어플리케이션 실행과 GC실행이 병행됨 → 어플리케이션의 사용성을 유지하면서 효율적이게 GC를 실행하기 어려움
 
 
-Garbage Collection(GC)
+GC - Heap영역 
 ---
+<a href="https://github.com/haeunk1/TIL/blob/main/java/Garbage%20Collection(GC).md">JVM</a>의 Heap영역
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/53562331/178188007-684b51b5-d31d-426c-839e-3832fa756352.png">
+
+**1. Young generation에서 발생하는 GC는 minor gc**
+- Eden : 새롭게 생성된 객체들이 할당되는 영역
+- Survival : minor gc로부터 살아남은 객체들이 존재하는 영역
+  - 둘 중 하나는 꼭 비어있어야 함
+  - age-bit : minor gc에서 살아남을 때마다 1씩 증가
+  - Promotion: JVM GC에서 age-bit 15를 넘어가면 old Generation으로 넘어감<br>
+
+**2. old generation에서 발생하는 GC는 major gc**
+- major gc는 minor gc보다 오래걸림
+
+Generation GC 배경
+---
+ <img width="315" alt="image" src="https://user-images.githubusercontent.com/53562331/178189479-a398aee2-ba8a-4bf2-9261-ffac66b951de.png">
+GC도 결국 비용인데 모든 영역에서 탐색하며 해제하기 보다는 특정부분에서 탐색하며 해제하는 것이 효율적!<br>
+→ 대부분의 객체가 수명이 짧기 때문에 Young generation안에서 최대한 처리
+
