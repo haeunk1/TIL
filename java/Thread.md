@@ -19,5 +19,31 @@
 
 <br>
 
-작성중..
-조금 더 정리 
+스레드 구현
+---
+스레드 구현 방법은 2가지가 있다.
+1. Runnable 인터페이스 구현
+2. Thread 클래스 상속
+둘 다 run()메소드를 오버라이딩 하는 방식
+<br>
+
+```java
+public class MyThread implements Runnable {
+    @Override
+    public void run() {
+        // 수행 코드
+    }
+}
+```
+
+<br>
+
+```java
+public class MyThread extends Thread {
+    @Override
+    public void run() {
+        // 수행 코드
+    }
+}
+```
+자바는 단일 상속이기 때문에 Thread클래스 상속 추천한다
